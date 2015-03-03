@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="CompreAqui.Paginas.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompreAqui.Paginas"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot" >
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/landscape.png"/>
+        </Grid.Background>
+        <Canvas Grid.RowSpan ="2" Background="#B2C80000" />
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Entrar" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+
+        </Grid>
+        <StackPanel Margin="10,93,-10,0" Grid.RowSpan="2">
+            <TextBlock Style="{StaticResource BaseTextBlockStyle}">Usuário</TextBlock>
+            <TextBox></TextBox>
+            <TextBlock Style="{StaticResource BaseTextBlockStyle}">Senha</TextBlock>
+            <PasswordBox></PasswordBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="True">Lembrar-me</CheckBox>
+                <Button Grid.Column="1" Margin="27,0,31,0" HorizontalAlignment="Stretch">Entrar</Button>
+            </Grid>
+
+
+
+        </StackPanel>
+    </Grid>
+
+</Page>

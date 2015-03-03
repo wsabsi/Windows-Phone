@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="CompreAqui.CreateAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompreAqui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/landscape.png" Stretch="UniformToFill"/>
+            
+        </Grid.Background>
+        <Canvas Grid.RowSpan="2" Background="#bf0e6400"/>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Criar conta" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock  Style="{StaticResource BaseTextBlockStyle}">Email</TextBlock>
+            <TextBox/>
+            <TextBlock Style="{StaticResource BaseTextBlockStyle}">Usuário</TextBlock>
+            <TextBox/>
+            <TextBlock Style="{StaticResource BaseTextBlockStyle}">Senha</TextBlock>
+            <!--Usada para não mostrar o conteúdo digitado pelo usuário-->
+            <PasswordBox></PasswordBox>
+            <TextBlock Style="{StaticResource BaseTextBlockStyle}">Confirmação de Senha</TextBlock>
+            <PasswordBox></PasswordBox> 
+            <!--Cria um novo grid para agrupar os botões Lembrar-me e Criar conta-->
+            <Grid>
+                <!--Uma definição de novas colunas para utilização, no caso 2-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--Por default, vai na primeira coluna pois não foi especificada a loccalização-->
+                <CheckBox IsChecked="True">Lembrar-me</CheckBox>
+                <!--Como o Grid.Column está setado como 1, esse botão será definido e criado na primeira coluna da tela-->
+                <Button Grid.Column="1">Criar Conta</Button>
+            </Grid>
+                      
+        </StackPanel>
+        
+
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="0" x:Name="ContentRoot" Margin="19,9.5,19,0">
+
+        </Grid>
+    </Grid>
+</Page>
